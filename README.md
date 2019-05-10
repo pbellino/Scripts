@@ -7,6 +7,10 @@ Scripts varios
 
 `cuenta_procesos.sh`: Cuenta la cantidad de procesos en un determinado nodo
 
+`huguis.sh`, `isaac.sh`, `neurus.sh`: Monta cuenta de los cluster en PC local
+
 #PYTHON
+
+`horario.py`: Pide horario CNEA
 
 
