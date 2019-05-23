@@ -1,0 +1,32 @@
+# Paper style 
+# Se debe copiar en .config/matplitlib/stylelib
+
+font.family: sans-serif
+font.sans-serif: Liberation sans 
+font.size: 15
+
+#figure.figsize: 6.4, 4.4
+figure.figsize: 7.2, 5.6
+axes.labelsize: 15.0
+axes.titlesize: 15.0
+xtick.labelsize: 14
+ytick.labelsize: 14
+legend.fontsize: 15
+
+
+grid.linewidth: 0.8
+lines.linewidth: 2.0
+patch.linewidth: 0.24
+lines.markersize: 6.0
+lines.markeredgewidth: 1
+
+# figure.autolayout : True
+#
+#xtick.major.width: 0.8
+#ytick.major.width: 0.8
+#xtick.minor.width: 0.4
+#ytick.minor.width: 0.4
+#
+#xtick.major.pad: 5.6
+#ytick.major.pad: 5.6
+
