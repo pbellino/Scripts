@@ -20,6 +20,8 @@ patch.linewidth: 0.24
 lines.markersize: 6.0
 lines.markeredgewidth: 1
 
+errorbar.capsize: 3
+
 # figure.autolayout : True
 #
 #xtick.major.width: 0.8
