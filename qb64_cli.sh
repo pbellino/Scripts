@@ -1,5 +1,14 @@
 #/bin/bash
 
+# Script para compilar programas el qbasic usando qb64
+# Ejemplo:
+#         qb64_cli.sh NAME.BAS
+#         qb64_cli.sh -c NAME.BAS
+#         qb64_cli.sh -x NAME.BAS
+# En todos los casos se generaa el ejecutable NAME en la misma 
+# carpeta donde está NAME.BAS
+#
+
 if [ $# -eq 0 ]
 then
     echo "Faltan argumentos (-[c,x] name.bas)"
