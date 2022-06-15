@@ -9,6 +9,7 @@ CONVERT=" iconv -f $FROM_ENCODING -t $TO_ENCODING"
 
 #loop to convert multiple files 
 for  file  in  *.RUI; do
-     $CONVERT   "$file" -o "${file%}"
+     $CONVERT   "$file" -o "${file}.new"
+     mv "${file}.new" "$file"
 done
 exit 0
