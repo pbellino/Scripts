@@ -4,7 +4,7 @@
 # Se debe cambiar el UUID dependiendo de la máquina
 # 
 
-VPN_CNEA_NAME="CNEA"
+VPN_CNEA_NAME="vpn-cnea"
 
 if [ $# ==  0 ]
   then
