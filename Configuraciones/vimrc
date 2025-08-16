@@ -1,64 +1,81 @@
-" COMIENZO - Para ser usado con Vundle
-set nocompatible              " be iMproved, required
+set nocompatible              " required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
+
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'scrooloose/nerdtree'
-
-" ----- Plugins propias
-"  Folding
-Plugin 'tmhedberg/SimpylFold'
+" Plugin 'g2boojum/vim-mcnp'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"
-" FIN - Para ser usado con Vundle
 
-" ---------------------------------------------------------
-" Graba y ejecuta pyhon con F5
-noremap <F5> <Esc>:w<CR>:!clear;python %<CR>
-inoremap <F5> <ESC>:w<CR>:!clear;python %<CR>
+" ----------------- Fin Boundle -------------------------------
+"
+" Enable folding
+set foldmethod=indent
+set foldlevel=0
 
-" ---------------------------------------------------------
-" Expande tabs con cuatro espacios en blanco
-filetype plugin indent on
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
-set shiftwidth=4
-" On pressing tab, insert 4 spaces
-set expandtab
-
-" ---------------------------------------------------------
 " Enable folding with the spacebar
 nnoremap <space> za
-"
-" ---------------------------------------------------------
-" Para que powerline aparezca por defecto sin necesidad
-" de poner PluginInstall
-set laststatus=2
-" Recordar instalar el paquete fonts-powerline 
 
-" ---------------------------------------------------------
-"  Ignorar archivos con NERDTree
-let NERDTreeIgnore=['\.pyc$', '\~$'] 
+" ------------------ PEP 8 indentation ----------------------------
+au BufNewFile,BufRead *.py
+    \ set tabstop=4	|	
+    \ set softtabstop=4	|
+    \ set shiftwidth=4	|
+    \ set textwidth=79	|
+    \ set expandtab	|
+    \ set autoindent	|
+    \ set fileformat=unix
+
+let python_highlight_all=1
+syntax on
+
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" Para que powerline aparezca por defecto sin necesidad de
+" poner :PluginInstall
+set laststatus=2
+
+set encoding=utf-8
+
+" Para ejecutar python3 con F5
+noremap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
+inoremap <F5> <ESC>:w<CR>:!clear;python3 %<CR>
+
+" Agrega número de líneas
+set nu
+
+" Para que funcione syntastic al grabar :w
+let g:syntastic_python_checkers = ['flake8']
+
+" Para controlar syntaxis al grabar (en vez de F7)
+" autocmd BufWritePost *.py call flake8#Flake8()
+
+" highlight any line longer than 80 chars
+autocmd filetype python,rst match ErrorMsg '\%>79v.\+'
+
+" Size of a hard tabstop
+set tabstop=4
+" Siza of an "indent"
+set shiftwidth=4
+" Convierte tabs en espacios en blanco
+set expandtab
+
+colorscheme pablo
