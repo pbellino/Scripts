@@ -13,6 +13,8 @@ if [ $# ==  0 ]
 elif [ $1 == 'desmontar' ] 
   then
     fusermount -u /media/pablo/neurus/
+    fusermount -u /media/pablo/gripra3/
+    fusermount -u /media/pablo/grcn/
     # Pregunta si se desactiva la VPN
     read -p "¿Desconecto la VPN? [y/n] " answ
     if [ ${answ} == 'y' ]; then
@@ -28,6 +30,8 @@ elif [ $1 == 'montar' ]
           vpn_cnea.sh up
       fi
     sshfs -o reconnect -o workaround=rename pbellino@neurus:/home/pbellino /media/pablo/neurus
+    sshfs -o reconnect -o workaround=rename pbellino@neurus:/share/gripra3/pbellino/ /media/pablo/gripra3
+    sshfs -o reconnect -o workaround=rename pbellino@neurus:/share/grcn/pbellino/ /media/pablo/grcn
  else
    echo 'Argumento no reconocido. Las opciones son [montar] o [desmontar]'
 fi
