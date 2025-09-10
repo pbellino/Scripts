@@ -1,0 +1,31 @@
+ 
+## Para phits
+export PHITSPATH=/mnt/hdpablo/phits/phits
+export PATH=/mnt/hdpablo/phits/phits/bin:${PATH}
+export PATH=/mnt/hdpablo/phits/phits/dchain-sp/bin:${PATH}
+
+export PATH
+PATH="/home/pablo/.local/bin:$PATH"
+ 
+##### path for mcnp620
+export PATH
+PATH="/mnt/hdpablo/MCNP/MCNP_CODE/bin:$PATH"
+ 
+ 
+##### path for data   
+export DATAPATH
+DATAPATH="/mnt/hdpablo/MCNP/MCNP_DATA"
+ 
+ 
+##### path for data   
+export ISCDATA
+ISCDATA="/mnt/hdpablo/MCNP/MCNP_CODE/MCNP620/Utilities/ISC/data"
+ 
+ulimit -s unlimited
+
+##### Path para NJOY2016
+PATH="/mnt/hdpablo/NJOY2016/build/:$PATH"
+
+### Para el paquete sandy de python
+export NJOY=/mnt/hdpablo/NJOY2016/build/njoy
+
