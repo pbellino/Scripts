@@ -1,0 +1,60 @@
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" add all your plugins here (note older versions of Vundle
+" used Bundle instead of Plugin)
+
+Plugin 'vim-python/python-syntax'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'scrooloose/nerdtree'
+Plugin 'g2boojum/vim-mcnp'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" ----------------- Fin Boundle -------------------------------
+"
+
+" Enable folding with the spacebar
+nnoremap <space> za
+
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" Para que powerline aparezca por defecto sin necesidad de
+" poner :PluginInstall
+set laststatus=2
+
+set encoding=utf-8
+
+" Para ejecutar python3 con F5
+noremap <F5> <Esc>:w<CR>:!clear;python3 %<CR>
+inoremap <F5> <ESC>:w<CR>:!clear;python3 %<CR>
+
+" Agrega número de líneas
+set nu
+
+let g:python_highlight_all = 1  " For python-syntax
+
+" highlight any line longer than 80 chars
+" autocmd filetype python,rst match ErrorMsg '\%>79v.\+'
+
+" Size of a hard tabstop
+set tabstop=4
+" Siza of an "indent"
+set shiftwidth=4
+" Convierte tabs en espacios en blanco
+set expandtab
+
+""" colorscheme pablo
