@@ -29,3 +29,5 @@ PATH="/mnt/hdpablo/NJOY2016/build/:$PATH"
 ### Para el paquete sandy de python
 export NJOY=/mnt/hdpablo/NJOY2016/build/njoy
 
+# Para cargar CinePy
+export PYTHONPATH="${PYTHONPATH}:/home/pablo/CinePy"
